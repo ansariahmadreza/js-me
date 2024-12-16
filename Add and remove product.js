@@ -58,8 +58,15 @@ if (userrequest === '1') {  //بخش اضافه کردن محصول
 
     })
 
-    Shoppingcart.splice(productindex,1)
-    console.log(Shoppingcart)
+
+    if (productindex === true) {
+        Shoppingcart.splice(productindex, 1)
+        console.log(Shoppingcart)
+    }else{
+
+        alert('محصول موجود نیست')
+    }
+
 } else {
 
     alert('لطفا گزینه صحیح را انتخاب کنید')

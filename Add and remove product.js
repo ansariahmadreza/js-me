@@ -49,7 +49,7 @@ if (userrequest === '1') {  //بخش اضافه کردن محصول
 
     productusername = prompt('inter name product:')
 
-    productdata;
+
 
     var productindex = Shoppingcart.findIndex(function (product) {
 
@@ -57,12 +57,13 @@ if (userrequest === '1') {  //بخش اضافه کردن محصول
 
 
     })
+    console.log(productindex)
 
+    if (productindex !== -1) {
 
-    if (productindex === true) {
         Shoppingcart.splice(productindex, 1)
         console.log(Shoppingcart)
-    }else{
+    } else {
 
         alert('محصول موجود نیست')
     }

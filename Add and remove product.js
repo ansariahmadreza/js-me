@@ -110,9 +110,9 @@ switch (userrequest) {
         }
         console.log(Shoppingcart)
 
-     
 
-    
+
+
 
         break;
 
@@ -126,8 +126,18 @@ switch (userrequest) {
 
         })
 
-        Shoppingcart.splice(isall, 1)
-        console.log(Shoppingcart)
+
+        if (isall!=-1) {
+
+            Shoppingcart.splice(isall, 1)
+            console.log(Shoppingcart)
+
+
+        } else {
+
+            alert('محصول مورد نظر در سبد یافت نشد ')
+        }
+
 
         break;
 

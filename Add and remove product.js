@@ -20,6 +20,70 @@ var userrequest = prompt('1.add product: \n 2.remove product:')  //منوی نم
 
 
 
+if (userrequest === '1') {  //بخش اضافه کردن محصول
+
+    let productusername = prompt('inter name product:')
+
+    var productdata;
+    let isinshop = shop.some(function (product) {
+        if (product.name == productusername) {
+            productdata = product
+            return true
+        }
+    })
+
+    if (isinshop === true) { // قسمت اضافه کردن ابجکت جدید به ارایه
+        let newproduct = [{
+            id: 4,
+            name: productdata.name,
+            price: productdata.price,
+
+        }]
+        Shoppingcart.push(newproduct)
+
+        console.log(Shoppingcart)
+    } else {
+
+        alert('همچین محصولی وجود ندارد')
+
+    }
+
+} else if (userrequest === '2') {   //بخش حذف محصول
+
+    productusername = prompt('inter name product:')
+
+
+
+    var productindex = Shoppingcart.findIndex(function (product) {
+
+        return product.name === productusername
+
+
+    })
+    console.log(productindex)
+
+    if (productindex !== -1) {
+
+        Shoppingcart.splice(productindex, 1)
+        console.log(Shoppingcart)
+    } else {
+
+        alert('محصول موجود نیست')
+    }
+
+} else {
+
+    alert('لطفا گزینه صحیح را انتخاب کنید')
+}
+
+
+
+
+///با سوییچ کیس نوشته شده حذف و اضافه کردن محصول از فروشگاه
+
+
+
+
 switch (userrequest) {
     case '1':
         var userproductname = prompt('inter name product:')
@@ -46,6 +110,10 @@ switch (userrequest) {
         }
         console.log(Shoppingcart)
 
+     
+
+    
+
         break;
 
     case "2":
@@ -58,7 +126,7 @@ switch (userrequest) {
 
         })
 
-        Shoppingcart.splice(isall,1)
+        Shoppingcart.splice(isall, 1)
         console.log(Shoppingcart)
 
         break;

@@ -17,58 +17,52 @@ var Shoppingcart = [
 
 var userrequest = prompt('1.add product: \n 2.remove product:')  //منوی نمایش داده شده به کاربر برای انتخاب گزینه حذف یا اضافه کردن محصول
 
-if (userrequest === '1') {  //بخش اضافه کردن محصول
 
-    let productusername = prompt('inter name product:')
 
-    var productdata;
-    let isinshop = shop.some(function (product) {
-        if (product.name == productusername) {
-            productdata = product
-            return true
+
+switch (userrequest) {
+    case '1':
+        var userproductname = prompt('inter name product:')
+
+        productdata = 0
+
+        var isall = shop.some(function (product) {
+
+            if (product.name === userproductname) {
+                productdata = product
+                return true
+
+            }
+        })
+
+        if (isall === true) {
+            var newproduct = [{
+                id: 4,
+                name: productdata.name,
+                price: productdata.price,
+            }]
+            Shoppingcart.push(newproduct)
+
         }
-    })
-
-    if (isinshop === true) { // قسمت اضافه کردن ابجکت جدید به ارایه
-        let newproduct = [{
-            id: 4,
-            name: productdata.name,
-            price: productdata.price,
-
-        }]
-        Shoppingcart.push(newproduct)
-
         console.log(Shoppingcart)
-    } else {
 
-        alert('همچین محصولی وجود ندارد')
+        break;
 
-    }
+    case "2":
 
-} else if (userrequest === '2') {   //بخش حذف محصول
+        var userproductname = prompt('inter name product:')
 
-    productusername = prompt('inter name product:')
+        var isall = Shoppingcart.findIndex(function (product) {
 
+            return product.name === userproductname
 
+        })
 
-    var productindex = Shoppingcart.findIndex(function (product) {
-
-        return product.name === productusername
-
-
-    })
-    console.log(productindex)
-
-    if (productindex !== -1) {
-
-        Shoppingcart.splice(productindex, 1)
+        Shoppingcart.splice(isall,1)
         console.log(Shoppingcart)
-    } else {
 
-        alert('محصول موجود نیست')
-    }
+        break;
 
-} else {
-
-    alert('لطفا گزینه صحیح را انتخاب کنید')
+    default:
+        alert('لطفا گزینه مناسب را انتخاب کنید')
 }

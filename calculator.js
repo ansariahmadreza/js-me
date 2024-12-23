@@ -32,28 +32,28 @@ if (useroperator === '1') {
 function sum(num1, um2) {
 
     //return num1 + num2
-    alert (num1 + num2)
+    alert(num1 + num2)
 }
 
 
 function tafriq(num1, num2) {
 
     //return num1 - num2
-    alert (num1 - num2)
+    alert(num1 - num2)
 
 }
 
 function devide(num1, num2) {
 
     //return num1 / num2
-    alert (num1 / num2)
+    alert(num1 / num2)
 
 }
 
 function zarb(num1, num2) {
 
     //return num1 * num2
-    alert (num1 * num2)
+    alert(num1 * num2)
 
 }
 
@@ -61,6 +61,35 @@ function zarb(num1, num2) {
 function power(num1, num2) {
 
     //return num1 ** num2
-    alert (num1 ** num2)
+    alert(num1 ** num2)
+
+}
+
+
+switch (useroperator) {
+
+    case '1':
+        sum(num1, num2)
+        break;
+    case '2':
+        tafriq(num1, num2)
+        break;
+    case '3':
+        devide(num1, num2)
+        break;
+    case '4':
+        zarb(num1, num2)
+        break;
+    case '5':
+        power(num1, num2)
+        break;
+    default:
+
+
+        alert('لطفا گزینه معتبر را وارد کنید')
+
+
+
+
 
 }

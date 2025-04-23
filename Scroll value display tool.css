@@ -1,0 +1,13 @@
+
+
+html{
+    height: 900px;
+}
+
+.scroll{
+    position: fixed;
+    background-color: red;
+    height: 3px;
+    /* width: 1530px; */
+    
+}
